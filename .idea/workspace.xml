@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8bd49cf1-2cca-49db-a27d-0321b356dc6e" name="Changes" comment="file structure created with 3 get requests - user, property, and properties">
+    <list default="true" id="8bd49cf1-2cca-49db-a27d-0321b356dc6e" name="Changes" comment="updating methods in PropertiesController">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/PropertiesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/PropertiesController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +76,7 @@
       <workItem from="1663413435834" duration="3000" />
       <workItem from="1663499703071" duration="69000" />
       <workItem from="1663575345229" duration="281000" />
+      <workItem from="1663766565318" duration="175000" />
     </task>
     <task id="LOCAL-00001" summary="test runner">
       <created>1662990121466</created>
@@ -126,6 +128,7 @@
     <MESSAGE value="second test for runner" />
     <MESSAGE value="third test for runner" />
     <MESSAGE value="file structure created with 3 get requests - user, property, and properties" />
-    <option name="LAST_COMMIT_MESSAGE" value="file structure created with 3 get requests - user, property, and properties" />
+    <MESSAGE value="updating methods in PropertiesController" />
+    <option name="LAST_COMMIT_MESSAGE" value="updating methods in PropertiesController" />
   </component>
 </project>

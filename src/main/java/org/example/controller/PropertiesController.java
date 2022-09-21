@@ -30,5 +30,10 @@ public class PropertiesController {
         GetAllPropertiesResponse response = propertyManager.getProperties();
         return  ResponseEntity.ok(response);
     }
+    @GetMapping("propertyTest")
+    public ResponseEntity<Property> getPropertyTest(){
+        final Property property = propertyManager.getProperty();
+        return ResponseEntity.ok().body(property);
+    }
 
 }
