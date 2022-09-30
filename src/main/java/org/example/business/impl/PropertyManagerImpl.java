@@ -36,8 +36,12 @@ public class PropertyManagerImpl implements PropertyManager {
         Property property2 = new Property();
         property1.setId(2);
         property2.setCity("Amsterdam");
+        Property property3 = new Property();
+        property1.setId(3);
+        property1.setCity("Eindhoven");
         properties.add(property1);
         properties.add(property2);
+        properties.add(property3);
         GetAllPropertiesResponse getAllPropertiesResponse = new GetAllPropertiesResponse(properties);
         return getAllPropertiesResponse;
     }
