@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8bd49cf1-2cca-49db-a27d-0321b356dc6e" name="Changes" comment="adding methods in PropertiesController">
+    <list default="true" id="8bd49cf1-2cca-49db-a27d-0321b356dc6e" name="Changes" comment="changes to property class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/business/impl/PropertyManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/business/impl/PropertyManagerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +80,7 @@
       <workItem from="1663766565318" duration="817000" />
       <workItem from="1664291851295" duration="21000" />
       <workItem from="1664440525065" duration="595000" />
-      <workItem from="1664522301778" duration="2642000" />
+      <workItem from="1664522301778" duration="2991000" />
     </task>
     <task id="LOCAL-00001" summary="test runner">
       <created>1662990121466</created>
@@ -111,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663359191121</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="changes to property class">
+      <created>1664525807256</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1664525807256</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,6 +141,7 @@
     <MESSAGE value="file structure created with 3 get requests - user, property, and properties" />
     <MESSAGE value="updating methods in PropertiesController" />
     <MESSAGE value="adding methods in PropertiesController" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding methods in PropertiesController" />
+    <MESSAGE value="changes to property class" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes to property class" />
   </component>
 </project>
