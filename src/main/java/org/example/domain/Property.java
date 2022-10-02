@@ -1,14 +1,16 @@
 package org.example.domain;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Property {
-    private int id;
+    private long id;
     private double price;
     private PropertyType propertyType;
     private String city;
