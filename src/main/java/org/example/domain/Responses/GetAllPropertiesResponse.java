@@ -12,5 +12,5 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 public class GetAllPropertiesResponse {
-    private List<Property> properties;
+    private List<PropertyDTO> properties;
 }
