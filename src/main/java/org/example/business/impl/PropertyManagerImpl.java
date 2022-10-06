@@ -1,5 +1,6 @@
 package org.example.business.impl;
 
+import lombok.AllArgsConstructor;
 import org.example.business.PropertyManager;
 import org.example.controller.DTO.PropertyDTO;
 import org.example.domain.Responses.GetAllPropertiesResponse;
@@ -13,6 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@AllArgsConstructor
 public class PropertyManagerImpl implements PropertyManager {
 
     private PropertyRepository propertyRepository;

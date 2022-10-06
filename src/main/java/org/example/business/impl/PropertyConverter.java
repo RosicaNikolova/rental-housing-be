@@ -11,6 +11,8 @@ final class PropertyConverter {
     public static Property convert(PropertyEntity property) {
         return Property.builder()
                 .id(property.getId())
+                .propertyType(property.getPropertyType())
+                .street(property.getStreet())
                 .build();
     }
 }

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(path = "properties/")
+@RequestMapping(path = "properties")
 @AllArgsConstructor
 public class PropertiesController {
     private final PropertyManagerImpl propertyManager;

@@ -8,6 +8,7 @@ import org.example.domain.PropertyType;
 public class PropertyEntity {
 
     @Getter
+    @Setter
     private Long id;
 
     @Getter
