@@ -1,14 +1,10 @@
 package org.example.controller;
-import java.util.List;
 import java.util.Optional;
-import java.util.Properties;
 
 import lombok.AllArgsConstructor;
-import org.example.business.PropertyManager;
 import org.example.business.impl.PropertyManagerImpl;
-import org.example.domain.GetAllPropertiesResponse;
-import org.example.domain.Property;
-import org.example.domain.User;
+import org.example.controller.DTO.PropertyDTO;
+import org.example.domain.Responses.GetAllPropertiesResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,9 +18,9 @@ public class PropertiesController {
     private final PropertyManagerImpl propertyManager;
 
     @GetMapping("{id}")
-    public ResponseEntity<Property> getProperty(@PathVariable(value = "id") final long id){
+    public ResponseEntity<PropertyDTO> getProperty(@PathVariable(value = "id") final long id){
 
-        final Optional<Property> propertyOptional = propertyManager.getProperty(id);
+        final Optional<PropertyDTO> propertyOptional = propertyManager.getProperty(id);
         if(propertyOptional.isEmpty()){
             return ResponseEntity.notFound().build();
         }
@@ -40,6 +36,7 @@ public class PropertiesController {
         GetAllPropertiesResponse response = propertyManager.getProperties();
         return ResponseEntity.ok(response);
     }
+
     /*@GetMapping("propertyTest")
     public ResponseEntity<Property> getPropertyTest(){
         final Property property = propertyManager.getProperty();

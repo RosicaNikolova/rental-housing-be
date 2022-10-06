@@ -1,13 +1,11 @@
 package org.example.business;
-import java.util.List;
 import java.util.Optional;
 
-import org.example.domain.GetAllPropertiesResponse;
-import org.example.domain.Property;
-
+import org.example.controller.DTO.PropertyDTO;
+import org.example.domain.Responses.GetAllPropertiesResponse;
 
 
 public interface PropertyManager {
-    public Optional<Property> getProperty(long id);
+    public Optional<PropertyDTO> getProperty(long id);
     public GetAllPropertiesResponse getProperties();
 }
