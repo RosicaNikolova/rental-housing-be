@@ -1,36 +1,24 @@
-package org.example.domain;
+package org.example.controller.DTO;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import org.example.domain.PropertyType;
 
+
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
-public class Property {
+public class PropertyDTO {
 
-    @Getter
     private long id;
-
-    @Getter
     private double price;
-
-    @Getter
     private PropertyType propertyType;
-
-    @Getter
     private String city;
-
-    @Getter
     private String street;
-
-    @Getter
     private int streetNumber;
-
-    @Getter
     private int livingSpace;
-
-    @Getter
     private int numberOfRooms;
-
-    @Getter
     private int numberOfBedrooms;
 }

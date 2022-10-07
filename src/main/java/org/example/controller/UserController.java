@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(path = "api/users")
+@RequestMapping(path = "users")
 @AllArgsConstructor
 public class UserController {
 
     private final UserManager userManager;
 
     @GetMapping("user")
-    public ResponseEntity<User> getStudent(){
+    public ResponseEntity<User> getUser(){
         final User user = userManager.getUser();
         return ResponseEntity.ok().body(user);
     }

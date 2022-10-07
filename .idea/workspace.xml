@@ -5,15 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bd49cf1-2cca-49db-a27d-0321b356dc6e" name="Changes" comment="changes to property class">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/business/impl/PropertyConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/persistence/PropertyRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/persistence/entity/PropertyEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/persistence/impl/FakePropertyRepositoryImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/business/PropertyManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/business/PropertyManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/business/impl/PropertyConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/business/impl/PropertyConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/business/impl/PropertyManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/business/impl/PropertyManagerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/business/impl/UserManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/business/impl/UserManagerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/DTO/PropertyDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/DTO/PropertyDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/PropertiesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/PropertiesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/Property.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/Property.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/persistence/entity/PropertyEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/persistence/entity/PropertyEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/persistence/impl/FakePropertyRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/persistence/impl/FakePropertyRepositoryImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +24,23 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="IndividualProject" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -90,7 +107,10 @@
       <workItem from="1664522301778" duration="4443000" />
       <workItem from="1664613394342" duration="600000" />
       <workItem from="1664706937919" duration="41000" />
-      <workItem from="1664706999920" duration="4493000" />
+      <workItem from="1664706999920" duration="5095000" />
+      <workItem from="1665069033902" duration="7272000" />
+      <workItem from="1665086399217" duration="597000" />
+      <workItem from="1665087026718" duration="1557000" />
     </task>
     <task id="LOCAL-00001" summary="test runner">
       <created>1662990121466</created>
@@ -138,7 +158,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -153,5 +185,15 @@
     <MESSAGE value="adding methods in PropertiesController" />
     <MESSAGE value="changes to property class" />
     <option name="LAST_COMMIT_MESSAGE" value="changes to property class" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NoClassDefFoundError" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
