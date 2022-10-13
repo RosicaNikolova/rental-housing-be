@@ -6,6 +6,7 @@ import org.example.controller.DTO.PropertyDTO;
 import org.example.domain.Responses.GetAllPropertiesResponse;
 import org.example.domain.Property;
 import org.example.persistence.PropertyRepository;
+import org.example.persistence.converters.PropertyConverter;
 import org.example.persistence.entity.PropertyEntity;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
@@ -29,7 +30,7 @@ public class PropertyManagerImpl implements PropertyManager {
     }
 
     @Override
-    public GetAllPropertiesResponse getProperties() {
+    public List<Property> getProperties() {
        /*
        List<Property> properties = new ArrayList<>();
         Property property1 = new Property();
@@ -44,15 +45,11 @@ public class PropertyManagerImpl implements PropertyManager {
         */
 
         //Getting properties entities from the repository
-        List<PropertyEntity> resultsFromRepo = propertyRepository.findAll();
+        List<Property> resultsFromRepo = propertyRepository.findAll();
 
         //Converting PropertyEntity to Property
-        List<Property> propertiesConverted = resultsFromRepo.stream().map(PropertyConverter::convert).toList();
-
-        final GetAllPropertiesResponse response =new GetAllPropertiesResponse();
 
         //Creating the response object which is List<PropertyDTO>
-        response.setProperties(propertiesConverted.stream().map(property -> modelMapper.map(property, PropertyDTO.class)).toList());
-        return response;
+        return resultsFromRepo;
     }
 }

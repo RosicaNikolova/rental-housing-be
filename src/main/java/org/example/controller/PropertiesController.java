@@ -1,21 +1,24 @@
 package org.example.controller;
+import java.util.List;
 import java.util.Optional;
 
 import lombok.AllArgsConstructor;
 import org.example.business.impl.PropertyManagerImpl;
 import org.example.controller.DTO.PropertyDTO;
+import org.example.domain.Property;
 import org.example.domain.Responses.GetAllPropertiesResponse;
+import org.modelmapper.ModelMapper;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin("http://localhost:3000")
 @RequestMapping(path = "properties")
 @AllArgsConstructor
 public class PropertiesController {
     private final PropertyManagerImpl propertyManager;
+    private ModelMapper modelMapper;
+
 
     @GetMapping("{id}")
     public ResponseEntity<PropertyDTO> getProperty(@PathVariable(value = "id") final long id){
@@ -33,7 +36,9 @@ public class PropertiesController {
     public ResponseEntity<GetAllPropertiesResponse> getProperties(){
 
         //Calling business layer
-        GetAllPropertiesResponse response = propertyManager.getProperties();
+        List<Property> properties = propertyManager.getProperties();
+        List<PropertyDTO> dtos = properties.stream().map(property -> modelMapper.map(property, PropertyDTO.class)).toList();
+        GetAllPropertiesResponse response = new GetAllPropertiesResponse(dtos);
         return ResponseEntity.ok(response);
     }
 

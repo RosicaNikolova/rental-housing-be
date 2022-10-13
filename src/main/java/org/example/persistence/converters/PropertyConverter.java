@@ -1,11 +1,11 @@
-package org.example.business.impl;
+package org.example.persistence.converters;
 
 import lombok.NoArgsConstructor;
 import org.example.domain.Property;
 import org.example.persistence.entity.PropertyEntity;
 
 @NoArgsConstructor
-final class PropertyConverter {
+public final class PropertyConverter {
 
 
     public static Property convert(PropertyEntity property) {
