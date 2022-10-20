@@ -17,39 +17,30 @@ import java.util.Optional;
 @Service
 @AllArgsConstructor
 public class PropertyManagerImpl implements PropertyManager {
-
     private PropertyRepository propertyRepository;
-    private ModelMapper modelMapper;
-    @Override
-    public Optional<PropertyDTO> getProperty(long id) {
 
-        Optional<Property> resultFromRepo = propertyRepository.findById(id).map(PropertyConverter::convert);
-        PropertyDTO response = modelMapper.map(resultFromRepo.get(), PropertyDTO.class);
-        Optional<PropertyDTO> property = Optional.of(response);
-        return property;
+    @Override
+    public Optional<Property> getProperty(long id) {
+        //Optional<Property> resultFromRepo = propertyRepository.findById(id).map(PropertyConverter::convert);
+       // PropertyDTO response = modelMapper.map(resultFromRepo.get(), PropertyDTO.class);
+        //Optional<PropertyDTO> property = Optional.of(response);
+
+        return propertyRepository.findById(id);
     }
 
     @Override
     public List<Property> getProperties() {
-       /*
-       List<Property> properties = new ArrayList<>();
-        Property property1 = new Property();
-        property1.setId(1);
-        property1.setCity("Eindhoven");
-        Property property2 = new Property();
-        property1.setId(2);
-        property2.setCity("Eindhoven");
-
-        properties.add(property1);
-        properties.add(property2);
-        */
-
-        //Getting properties entities from the repository
         List<Property> resultsFromRepo = propertyRepository.findAll();
+        return  resultsFromRepo;
+    }
 
-        //Converting PropertyEntity to Property
+    @Override
+    public Property createProperty(Property request) {
+        if(propertyRepository.findByPostCodeAndPrice(request.getPostCode(), request.getPrice())){
+            Property response = propertyRepository.createProperty(request);
+            return response;
+        }
+        return null;
 
-        //Creating the response object which is List<PropertyDTO>
-        return resultsFromRepo;
     }
 }

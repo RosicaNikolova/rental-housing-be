@@ -8,6 +8,7 @@ import org.example.domain.Responses.GetAllPropertiesResponse;
 
 
 public interface PropertyManager {
-    public Optional<PropertyDTO> getProperty(long id);
-    public List<Property> getProperties();
+    Optional<Property> getProperty(long id);
+    List<Property> getProperties();
+    Property createProperty(Property request);
 }
