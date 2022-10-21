@@ -2,7 +2,6 @@ package org.example.controller.DTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.example.domain.PropertyStatus;
 import org.example.domain.PropertyType;
@@ -16,7 +15,6 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 public class PropertyDTO {
 
-    //private Long id;
 
     @NotNull
     private double price;

@@ -1,6 +1,6 @@
 package org.example.persistence;
 
-import org.example.domain.Property;
+
 import org.example.persistence.entity.PropertyEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -21,24 +21,20 @@ public class PropertyManagerImpl implements PropertyManager {
 
     @Override
     public Optional<Property> getProperty(long id) {
-        //Optional<Property> resultFromRepo = propertyRepository.findById(id).map(PropertyConverter::convert);
-       // PropertyDTO response = modelMapper.map(resultFromRepo.get(), PropertyDTO.class);
-        //Optional<PropertyDTO> property = Optional.of(response);
+
 
         return propertyRepository.findById(id);
     }
 
     @Override
     public List<Property> getProperties() {
-        List<Property> resultsFromRepo = propertyRepository.findAll();
-        return  resultsFromRepo;
+        return  propertyRepository.findAll();
     }
 
     @Override
     public Property createProperty(Property request) {
         if(propertyRepository.findByPostCodeAndPrice(request.getPostCode(), request.getPrice())){
-            Property response = propertyRepository.createProperty(request);
-            return response;
+            return propertyRepository.createProperty(request);
         }
         return null;
 

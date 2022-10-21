@@ -1,12 +1,16 @@
 package org.example.persistence.converters;
 
-import lombok.NoArgsConstructor;
+
 import org.example.domain.Property;
 import org.example.persistence.entity.PropertyEntity;
 
-@NoArgsConstructor
+//@NoArgsConstructor
 public final class PropertyConverter {
 
+
+    private PropertyConverter(){
+
+    }
     public static Property convert(PropertyEntity property) {
         return Property.builder()
                 .id(property.getId())

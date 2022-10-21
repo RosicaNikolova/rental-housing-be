@@ -1,8 +1,8 @@
 package org.example.persistence;
 
-import lombok.NoArgsConstructor;
+
 import org.example.domain.Property;
-import org.example.persistence.entity.PropertyEntity;
+
 
 import java.util.List;
 import java.util.Optional;
