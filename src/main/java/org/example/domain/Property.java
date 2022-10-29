@@ -30,4 +30,6 @@ public class Property {
     private int numberOfBedrooms;
 
     private PropertyStatus propertyStatus;
+
+
 }

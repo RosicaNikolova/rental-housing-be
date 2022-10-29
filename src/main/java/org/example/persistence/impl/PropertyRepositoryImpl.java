@@ -20,6 +20,7 @@ import java.util.Optional;
 public class PropertyRepositoryImpl implements PropertyRepository {
 
     private JPAPropertyRepository jpaPropertyRepository;
+    ModelMapper modelMapper;
 
 
     @Override
@@ -30,7 +31,6 @@ public class PropertyRepositoryImpl implements PropertyRepository {
     }
 
 
-
     @Override
     public Optional<Property> findById(long propertyId) {
         return jpaPropertyRepository.findById(propertyId).map(PropertyConverter::convert);
@@ -39,7 +39,6 @@ public class PropertyRepositoryImpl implements PropertyRepository {
     @Override
     public Long createProperty(Property request) {
 
-        ModelMapper modelMapper = new ModelMapper();
         PropertyEntity propertyEntity = modelMapper.map(request, PropertyEntity.class);
 
         return jpaPropertyRepository.save(propertyEntity).getId();
@@ -55,5 +54,16 @@ public class PropertyRepositoryImpl implements PropertyRepository {
         else{
             return false;
         }
+    }
+
+    @Override
+    public void updateProperty(Property property) {
+        PropertyEntity propertyEntity = modelMapper.map(property, PropertyEntity.class);
+        jpaPropertyRepository.save(propertyEntity);
+    }
+
+    @Override
+    public void deleteProperty(long propertyId) {
+        jpaPropertyRepository.deleteById(propertyId);
     }
 }

@@ -1,4 +1,4 @@
-package org.example.domain.Responses;
+package org.example.controller.DTO;
 
 
 import lombok.Setter;

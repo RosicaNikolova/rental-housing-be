@@ -4,11 +4,15 @@ import java.util.List;
 import java.util.Optional;
 
 import lombok.AllArgsConstructor;
+import org.example.business.Exceptions.CreatePropertyException;
+import org.example.business.Exceptions.DeletePropertyException;
+import org.example.business.Exceptions.UpdatePropertyException;
 import org.example.business.impl.PropertyManagerImpl;
 import org.example.controller.DTO.PropertyDTO;
+import org.example.controller.DTO.UpdatePropertyRequest;
 import org.example.domain.Property;
-import org.example.domain.Responses.CreatePropertyResponse;
-import org.example.domain.Responses.GetAllPropertiesResponse;
+import org.example.controller.DTO.CreatePropertyResponse;
+import org.example.controller.DTO.GetAllPropertiesResponse;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,7 +27,6 @@ import javax.validation.Valid;
 public class PropertiesController {
     private final PropertyManagerImpl propertyManager;
     private ModelMapper modelMapper;
-
 
     @GetMapping("{id}")
     public ResponseEntity<PropertyDTO> getProperty(@PathVariable(value = "id") final long id){
@@ -64,11 +67,34 @@ public class PropertiesController {
         try{
         createPropertyResponse.setId(propertyManager.createProperty(propertyRequestConverted));
         }
-        catch(Exception e){
+        catch(CreatePropertyException e){
+            return ResponseEntity.noContent().build();
         }
-
         return ResponseEntity.status(HttpStatus.CREATED).body(createPropertyResponse);
-
     }
 
+    @PutMapping("{id}")
+    public ResponseEntity<Void> updateProperty(@PathVariable("id") long id,
+                                              @RequestBody @Valid UpdatePropertyRequest request) {
+        request.setId(id);
+
+        Property property = modelMapper.map(request, Property.class);
+        try {
+            propertyManager.updateProperty(property);
+        }
+        catch (UpdatePropertyException e){
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.noContent().build();
+    }
+    @DeleteMapping("{propertyId}")
+    public ResponseEntity<Void> deleteProperty(@PathVariable long propertyId) {
+        try {
+            propertyManager.deleteProperty(propertyId);
+        }
+        catch (DeletePropertyException e){
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.noContent().build();
+    }
 }

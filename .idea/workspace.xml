@@ -5,11 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bd49cf1-2cca-49db-a27d-0321b356dc6e" name="Changes" comment="changes to property class">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/Responses/CreatePropertyResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/business/Exceptions/CreatePropertyException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/business/Exceptions/DeletePropertyException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/business/Exceptions/UpdatePropertyException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/DTO/UpdatePropertyRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/business/PropertyManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/business/PropertyManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/business/impl/PropertyManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/business/impl/PropertyManagerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/DTO/PropertyDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/DTO/PropertyDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/PropertiesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/PropertiesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/Property.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/Property.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/Responses/CreatePropertyResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/DTO/CreatePropertyResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/Responses/GetAllPropertiesResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/DTO/GetAllPropertiesResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/persistence/PropertyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/persistence/PropertyRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/persistence/impl/PropertyRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/persistence/impl/PropertyRepositoryImpl.java" afterDir="false" />
     </list>
@@ -92,7 +99,7 @@
       <recent name="org.example.business.impl" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.PropertyManagerImplTest">
+  <component name="RunManager" selected="Spring Boot.HousingApp">
     <configuration name="PropertyManagerImplTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -273,7 +280,7 @@
       <workItem from="1666340759539" duration="3161000" />
       <workItem from="1666350467577" duration="3427000" />
       <workItem from="1666714502824" duration="601000" />
-      <workItem from="1667056135388" duration="5431000" />
+      <workItem from="1667056135388" duration="12127000" />
     </task>
     <task id="LOCAL-00001" summary="test runner">
       <created>1662990121466</created>
