@@ -32,11 +32,13 @@ public class PropertyManagerImpl implements PropertyManager {
     }
 
     @Override
-    public Property createProperty(Property request) {
+    public Long createProperty(Property request) {
+
         if(propertyRepository.findByPostCodeAndPrice(request.getPostCode(), request.getPrice())){
             return propertyRepository.createProperty(request);
         }
-        return null;
+
+        return 0L;
 
     }
 }

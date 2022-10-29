@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import org.example.business.impl.PropertyManagerImpl;
 import org.example.controller.DTO.PropertyDTO;
 import org.example.domain.Property;
+import org.example.domain.Responses.CreatePropertyResponse;
 import org.example.domain.Responses.GetAllPropertiesResponse;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
@@ -52,21 +53,22 @@ public class PropertiesController {
                     .toList());
             return ResponseEntity.ok(response);
         }
-
     }
 
     @PostMapping()
-    public ResponseEntity<PropertyDTO> createProperty(@RequestBody @Valid PropertyDTO request) {
+    public ResponseEntity<CreatePropertyResponse> createProperty(@RequestBody @Valid PropertyDTO request) {
 
         Property propertyRequestConverted = modelMapper.map(request, Property.class);
-        Property propertyCreated = propertyManager.createProperty(propertyRequestConverted);
-        if(propertyCreated != null) {
-            PropertyDTO response = modelMapper.map(propertyCreated, PropertyDTO.class);
-            return ResponseEntity.status(HttpStatus.CREATED).body(response);
+
+        CreatePropertyResponse createPropertyResponse = new CreatePropertyResponse();
+        try{
+        createPropertyResponse.setId(propertyManager.createProperty(propertyRequestConverted));
         }
-        else{
-            return ResponseEntity.badRequest().build();
+        catch(Exception e){
         }
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(createPropertyResponse);
+
     }
 
 }

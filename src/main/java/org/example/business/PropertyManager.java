@@ -9,5 +9,5 @@ import org.example.domain.Property;
 public interface PropertyManager {
     Optional<Property> getProperty(long id);
     List<Property> getProperties();
-    Property createProperty(Property request);
+    Long createProperty(Property request);
 }

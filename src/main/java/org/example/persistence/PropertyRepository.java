@@ -13,7 +13,7 @@ public interface PropertyRepository {
 
     Optional<Property> findById(long propertyId);
 
-    Property createProperty(Property request);
+    Long createProperty(Property request);
 
     boolean findByPostCodeAndPrice(String postCode, double price);
 }

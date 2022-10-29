@@ -37,12 +37,12 @@ public class PropertyRepositoryImpl implements PropertyRepository {
     }
 
     @Override
-    public Property createProperty(Property request) {
+    public Long createProperty(Property request) {
 
         ModelMapper modelMapper = new ModelMapper();
         PropertyEntity propertyEntity = modelMapper.map(request, PropertyEntity.class);
-        jpaPropertyRepository.save(propertyEntity);
-        return modelMapper.map(propertyEntity, Property.class);
+
+        return jpaPropertyRepository.save(propertyEntity).getId();
 
     }
 
