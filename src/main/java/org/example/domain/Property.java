@@ -5,32 +5,31 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Getter
+@Setter
 public class Property {
 
-    @Getter
-    private long id;
+    private Long id;
 
-    @Getter
     private double price;
 
-    @Getter
     private PropertyType propertyType;
 
-    @Getter
     private String city;
 
-    @Getter
     private String street;
 
-    @Getter
+    private String postCode;
+
     private int streetNumber;
 
-    @Getter
     private int livingSpace;
 
-    @Getter
     private int numberOfRooms;
 
-    @Getter
     private int numberOfBedrooms;
+
+    private PropertyStatus propertyStatus;
+
+
 }

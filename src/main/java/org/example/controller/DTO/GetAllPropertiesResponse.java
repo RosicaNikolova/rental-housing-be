@@ -1,4 +1,4 @@
-package org.example.domain.Responses;
+package org.example.controller.DTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,5 +13,6 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 public class GetAllPropertiesResponse {
+
     private List<PropertyDTO> properties;
 }

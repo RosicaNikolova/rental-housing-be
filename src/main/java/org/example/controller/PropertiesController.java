@@ -1,46 +1,100 @@
 package org.example.controller;
+
+import java.util.List;
 import java.util.Optional;
 
 import lombok.AllArgsConstructor;
+import org.example.business.Exceptions.CreatePropertyException;
+import org.example.business.Exceptions.DeletePropertyException;
+import org.example.business.Exceptions.UpdatePropertyException;
 import org.example.business.impl.PropertyManagerImpl;
 import org.example.controller.DTO.PropertyDTO;
-import org.example.domain.Responses.GetAllPropertiesResponse;
+import org.example.controller.DTO.UpdatePropertyRequest;
+import org.example.domain.Property;
+import org.example.controller.DTO.CreatePropertyResponse;
+import org.example.controller.DTO.GetAllPropertiesResponse;
+import org.modelmapper.ModelMapper;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @RestController
+@CrossOrigin("http://localhost:3000")
 @RequestMapping(path = "properties")
 @AllArgsConstructor
 public class PropertiesController {
     private final PropertyManagerImpl propertyManager;
+    private ModelMapper modelMapper;
 
     @GetMapping("{id}")
     public ResponseEntity<PropertyDTO> getProperty(@PathVariable(value = "id") final long id){
 
-        final Optional<PropertyDTO> propertyOptional = propertyManager.getProperty(id);
+        final Optional<Property> propertyOptional = propertyManager.getProperty(id);
+
         if(propertyOptional.isEmpty()){
             return ResponseEntity.notFound().build();
         }
         else{
-            return ResponseEntity.ok().body(propertyOptional.get());
+            Optional<PropertyDTO> property = Optional.of(modelMapper.map(propertyOptional.get(), PropertyDTO.class));
+            return ResponseEntity.ok().body(property.get());
         }
     }
 
     @GetMapping
     public ResponseEntity<GetAllPropertiesResponse> getProperties(){
 
-        //Calling business layer
-        GetAllPropertiesResponse response = propertyManager.getProperties();
-        return ResponseEntity.ok(response);
+        List <Property> properties= propertyManager.getProperties();
+        if (properties.isEmpty()){
+            return ResponseEntity.noContent().build();
+        }
+        else{
+            GetAllPropertiesResponse response = new GetAllPropertiesResponse(properties
+                    .stream()
+                    .map(property -> modelMapper.map(property, PropertyDTO.class))
+                    .toList());
+            return ResponseEntity.ok(response);
+        }
     }
 
-    /*@GetMapping("propertyTest")
-    public ResponseEntity<Property> getPropertyTest(){
-        final Property property = propertyManager.getProperty();
-        return ResponseEntity.ok().body(property);
-    } */
+    @PostMapping()
+    public ResponseEntity<CreatePropertyResponse> createProperty(@RequestBody @Valid PropertyDTO request) {
 
+        Property propertyRequestConverted = modelMapper.map(request, Property.class);
+
+        CreatePropertyResponse createPropertyResponse = new CreatePropertyResponse();
+        try{
+        createPropertyResponse.setId(propertyManager.createProperty(propertyRequestConverted));
+        }
+        catch(CreatePropertyException e){
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.status(HttpStatus.CREATED).body(createPropertyResponse);
+    }
+
+    @PutMapping("{id}")
+    public ResponseEntity<Void> updateProperty(@PathVariable("id") long id,
+                                              @RequestBody @Valid UpdatePropertyRequest request) {
+        request.setId(id);
+
+        Property property = modelMapper.map(request, Property.class);
+        try {
+            propertyManager.updateProperty(property);
+        }
+        catch (UpdatePropertyException e){
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.noContent().build();
+    }
+    @DeleteMapping("{propertyId}")
+    public ResponseEntity<Void> deleteProperty(@PathVariable long propertyId) {
+        try {
+            propertyManager.deleteProperty(propertyId);
+        }
+        catch (DeletePropertyException e){
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.noContent().build();
+    }
 }

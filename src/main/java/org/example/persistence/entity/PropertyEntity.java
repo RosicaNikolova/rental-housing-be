@@ -1,46 +1,55 @@
 package org.example.persistence.entity;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+import org.example.domain.PropertyStatus;
 import org.example.domain.PropertyType;
 
+import javax.persistence.*;
 
+@Getter
+@Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+@Table(name = "properties")
 public class PropertyEntity {
 
-    @Getter
-    @Setter
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
-    @Getter
-    @Setter
+    @Column(name = "price")
     private double price;
 
-    @Getter
-    @Setter
+    @Column(name="propertytype", columnDefinition = "ENUM('APARTMENT', 'HOUSE', 'ROOM', 'STUDIO')")
+    @Enumerated(EnumType.STRING)
     private PropertyType propertyType;
 
-    @Getter
-    @Setter
+    @Column(name = "city")
     private String city;
 
-    @Getter
-    @Setter
+    @Column(name = "street")
     private String street;
 
-    @Getter
-    @Setter
+    @Column(name = "streetnumber")
     private int streetNumber;
 
-    @Getter
-    @Setter
+    @Column(name = "postcode")
+    private String postcode;
+
+    @Column(name = "livingspace")
     private int livingSpace;
 
-    @Getter
-    @Setter
+    @Column(name = "numberofrooms")
     private int numberOfRooms;
 
-    @Getter
-    @Setter
+    @Column(name = "numberofbedrooms")
     private int numberOfBedrooms;
+
+    @Column(name = "propertystatus", columnDefinition = "ENUM('ACTIVE', 'INACTIVE')")
+    @Enumerated(EnumType.STRING)
+    private PropertyStatus propertyStatus;
 
 }

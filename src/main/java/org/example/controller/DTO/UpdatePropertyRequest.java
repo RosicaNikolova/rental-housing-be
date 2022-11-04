@@ -1,20 +1,16 @@
 package org.example.controller.DTO;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.example.domain.PropertyStatus;
 import org.example.domain.PropertyType;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class PropertyDTO {
+public class UpdatePropertyRequest {
 
+    private Long id;
 
     @NotNull
     private double price;

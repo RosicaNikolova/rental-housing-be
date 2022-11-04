@@ -2,12 +2,8 @@ package org.example.business.impl;
 
 import lombok.AllArgsConstructor;
 import org.example.business.PropertyManager;
-import org.example.controller.DTO.PropertyDTO;
-import org.example.domain.Responses.GetAllPropertiesResponse;
 import org.example.domain.Property;
 import org.example.persistence.PropertyRepository;
-import org.example.persistence.entity.PropertyEntity;
-import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,43 +12,50 @@ import java.util.Optional;
 @Service
 @AllArgsConstructor
 public class PropertyManagerImpl implements PropertyManager {
-
     private PropertyRepository propertyRepository;
-    private ModelMapper modelMapper;
-    @Override
-    public Optional<PropertyDTO> getProperty(long id) {
 
-        Optional<Property> resultFromRepo = propertyRepository.findById(id).map(PropertyConverter::convert);
-        PropertyDTO response = modelMapper.map(resultFromRepo.get(), PropertyDTO.class);
-        Optional<PropertyDTO> property = Optional.of(response);
-        return property;
+    @Override
+    public Optional<Property> getProperty(long id) {
+
+        return propertyRepository.findById(id);
     }
 
     @Override
-    public GetAllPropertiesResponse getProperties() {
-       /*
-       List<Property> properties = new ArrayList<>();
-        Property property1 = new Property();
-        property1.setId(1);
-        property1.setCity("Eindhoven");
-        Property property2 = new Property();
-        property1.setId(2);
-        property2.setCity("Eindhoven");
+    public List<Property> getProperties() {
+        return  propertyRepository.findAll();
+    }
 
-        properties.add(property1);
-        properties.add(property2);
-        */
+    @Override
+    public Long createProperty(Property request){
 
-        //Getting properties entities from the repository
-        List<PropertyEntity> resultsFromRepo = propertyRepository.findAll();
+        //the Controller catch the exception
 
-        //Converting PropertyEntity to Property
-        List<Property> propertiesConverted = resultsFromRepo.stream().map(PropertyConverter::convert).toList();
+       // if(propertyRepository.findByPostCodeAndPrice(request.getPostCode(), request.getPrice())){
+            return propertyRepository.createProperty(request);
+        //}
+        //else{
+            //throw new CreatePropertyException("This property already exists");
+        //}
+        //return 1L;
+    }
 
-        final GetAllPropertiesResponse response =new GetAllPropertiesResponse();
+    @Override
+    public void updateProperty(Property property) {
+        //if(propertyRepository.findById(property.getId()).isEmpty()){
+          //  throw new UpdatePropertyException("Property not found");
+        //}
+        //else {
+            propertyRepository.updateProperty(property);
+        //}
+    }
 
-        //Creating the response object which is List<PropertyDTO>
-        response.setProperties(propertiesConverted.stream().map(property -> modelMapper.map(property, PropertyDTO.class)).toList());
-        return response;
+    @Override
+    public void deleteProperty(long propertyId) {
+        //if(propertyRepository.findById(propertyId).isEmpty()){
+          //  throw new DeletePropertyException("Property not found");
+        //}
+        //else {
+            propertyRepository.deleteProperty(propertyId);
+        //}
     }
 }

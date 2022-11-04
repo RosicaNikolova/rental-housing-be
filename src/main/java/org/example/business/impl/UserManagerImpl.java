@@ -10,8 +10,8 @@ import org.springframework.stereotype.Service;
 public class UserManagerImpl implements UserManager {
     @Override
     public User getUser() {
-        User user = new User(1, "rositsa@mail.com", "Rositsa", "Nikolova");
-        return user;
+
+        return new User(1, "rositsa@mail.com", "Rositsa", "Nikolova");
 
     }
 }

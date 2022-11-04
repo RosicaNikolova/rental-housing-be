@@ -1,11 +1,18 @@
 package org.example.business;
+import java.util.List;
 import java.util.Optional;
 
-import org.example.controller.DTO.PropertyDTO;
-import org.example.domain.Responses.GetAllPropertiesResponse;
+import org.example.business.Exceptions.CreatePropertyException;
+import org.example.domain.Property;
+
 
 
 public interface PropertyManager {
-    public Optional<PropertyDTO> getProperty(long id);
-    public GetAllPropertiesResponse getProperties();
+    Optional<Property> getProperty(long id);
+    List<Property> getProperties();
+    Long createProperty(Property request);
+
+    void updateProperty(Property property);
+
+    void deleteProperty(long propertyId);
 }
