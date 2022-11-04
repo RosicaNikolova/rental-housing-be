@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8bd49cf1-2cca-49db-a27d-0321b356dc6e" name="Changes" comment="changes to property class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/business/impl/PropertyManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/business/impl/PropertyManagerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/persistence/impl/PropertyRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/persistence/impl/PropertyRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/business/impl/PropertyManagerImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/business/impl/PropertyManagerImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +89,7 @@
       <recent name="org.example.business.impl" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.PropertyManagerImplTest">
+  <component name="RunManager" selected="Spring Boot.HousingApp">
     <configuration name="PropertyManagerImplTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -275,7 +272,7 @@
       <workItem from="1666714502824" duration="601000" />
       <workItem from="1667056135388" duration="17709000" />
       <workItem from="1667552405027" duration="4524000" />
-      <workItem from="1667565978527" duration="4554000" />
+      <workItem from="1667565978527" duration="11056000" />
     </task>
     <task id="LOCAL-00001" summary="test runner">
       <created>1662990121466</created>
