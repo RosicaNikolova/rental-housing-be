@@ -1,6 +1,9 @@
 package org.example.persistence.impl;
 
 import lombok.AllArgsConstructor;
+import org.example.business.Exceptions.CreatePropertyException;
+import org.example.business.Exceptions.DeletePropertyException;
+import org.example.business.Exceptions.UpdatePropertyException;
 import org.example.domain.Property;
 import org.example.persistence.JPAPropertyRepository;
 import org.example.persistence.PropertyRepository;
@@ -41,8 +44,14 @@ public class PropertyRepositoryImpl implements PropertyRepository {
 
         PropertyEntity propertyEntity = modelMapper.map(request, PropertyEntity.class);
 
-        return jpaPropertyRepository.save(propertyEntity).getId();
-
+        //Catch the SQL exception
+        //Rethrows custom exception
+        try {
+            return jpaPropertyRepository.save(propertyEntity).getId();
+        }
+        catch (Exception e){
+            throw new CreatePropertyException("Error while creating property");
+        }
     }
 
     @Override
@@ -59,11 +68,21 @@ public class PropertyRepositoryImpl implements PropertyRepository {
     @Override
     public void updateProperty(Property property) {
         PropertyEntity propertyEntity = modelMapper.map(property, PropertyEntity.class);
-        jpaPropertyRepository.save(propertyEntity);
+        try {
+            jpaPropertyRepository.save(propertyEntity);
+        }
+        catch (Exception e){
+            throw new UpdatePropertyException("Error while updating property");
+        }
     }
 
     @Override
     public void deleteProperty(long propertyId) {
-        jpaPropertyRepository.deleteById(propertyId);
+        try {
+            jpaPropertyRepository.deleteById(propertyId);
+        }
+        catch (Exception e){
+            throw new DeletePropertyException("Error while deleting the property");
+        }
     }
 }

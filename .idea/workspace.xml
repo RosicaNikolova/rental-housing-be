@@ -5,20 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bd49cf1-2cca-49db-a27d-0321b356dc6e" name="Changes" comment="changes to property class">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/business/Exceptions/CreatePropertyException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/business/Exceptions/DeletePropertyException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/business/Exceptions/UpdatePropertyException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/DTO/UpdatePropertyRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/business/PropertyManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/business/PropertyManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/business/impl/PropertyManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/business/impl/PropertyManagerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/DTO/PropertyDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/DTO/PropertyDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/PropertiesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/PropertiesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/Property.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/Property.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/Responses/CreatePropertyResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/DTO/CreatePropertyResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/Responses/GetAllPropertiesResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/DTO/GetAllPropertiesResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/persistence/PropertyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/persistence/PropertyRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/persistence/impl/PropertyRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/persistence/impl/PropertyRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/business/impl/PropertyManagerImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/business/impl/PropertyManagerImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +23,9 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
@@ -69,28 +62,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelOrder2": "2",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RequestMappingsPanelWidth2": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.editor",
-    "spring.configuration.checksum": "7260bb269a9c1bfbb39ae4b62044936f"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelOrder2&quot;: &quot;2&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth2&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;7260bb269a9c1bfbb39ae4b62044936f&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -99,7 +92,7 @@
       <recent name="org.example.business.impl" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.HousingApp">
+  <component name="RunManager" selected="Gradle.PropertyManagerImplTest">
     <configuration name="PropertyManagerImplTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -123,7 +116,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="PropertyManagerImplTest.getPropertiesReturnsAllProperties" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PropertyManagerImplTest.DeletePropertySuccessful" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -136,7 +129,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.example.business.impl.PropertyManagerImplTest.getPropertiesReturnsAllProperties&quot;" />
+            <option value="&quot;org.example.business.impl.PropertyManagerImplTest.DeletePropertySuccessful&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -146,7 +139,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="PropertyManagerImplTest.getPropertiesReturnsEmptyList" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PropertyManagerImplTest.DeletePropertyThrowsAnException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -159,7 +152,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.example.business.impl.PropertyManagerImplTest.getPropertiesReturnsEmptyList&quot;" />
+            <option value="&quot;org.example.business.impl.PropertyManagerImplTest.DeletePropertyThrowsAnException&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -169,7 +162,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="PropertyManagerImplTest.getPropertyByIdFound" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PropertyManagerImplTest.UpdatePropertySuccessful" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -182,7 +175,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.example.business.impl.PropertyManagerImplTest.getPropertyByIdFound&quot;" />
+            <option value="&quot;org.example.business.impl.PropertyManagerImplTest.UpdatePropertySuccessful&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -192,7 +185,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="PropertyManagerImplTest.getPropertyByIdNotFound" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PropertyManagerImplTest.UpdatePropertyThrowsAnException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -205,7 +198,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.example.business.impl.PropertyManagerImplTest.getPropertyByIdNotFound&quot;" />
+            <option value="&quot;org.example.business.impl.PropertyManagerImplTest.UpdatePropertyThrowsAnException&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -225,10 +218,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.PropertyManagerImplTest" />
-        <item itemvalue="Gradle.PropertyManagerImplTest.getPropertyByIdNotFound" />
-        <item itemvalue="Gradle.PropertyManagerImplTest.getPropertyByIdFound" />
-        <item itemvalue="Gradle.PropertyManagerImplTest.getPropertiesReturnsAllProperties" />
-        <item itemvalue="Gradle.PropertyManagerImplTest.getPropertiesReturnsEmptyList" />
+        <item itemvalue="Gradle.PropertyManagerImplTest.DeletePropertySuccessful" />
+        <item itemvalue="Gradle.PropertyManagerImplTest.DeletePropertyThrowsAnException" />
+        <item itemvalue="Gradle.PropertyManagerImplTest.UpdatePropertyThrowsAnException" />
+        <item itemvalue="Gradle.PropertyManagerImplTest.UpdatePropertySuccessful" />
       </list>
     </recent_temporary>
   </component>
@@ -280,7 +273,9 @@
       <workItem from="1666340759539" duration="3161000" />
       <workItem from="1666350467577" duration="3427000" />
       <workItem from="1666714502824" duration="601000" />
-      <workItem from="1667056135388" duration="12127000" />
+      <workItem from="1667056135388" duration="17709000" />
+      <workItem from="1667552405027" duration="4524000" />
+      <workItem from="1667565978527" duration="4554000" />
     </task>
     <task id="LOCAL-00001" summary="test runner">
       <created>1662990121466</created>
@@ -368,6 +363,7 @@
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="org.example.controller.DTO.PropertyDTO" memberName="numberOfRooms" />
+        <PinnedItemInfo parentTag="org.example.persistence.PropertyRepository$MockitoMock$LyU1WoVC" memberName="mockitoInterceptor" />
       </pinned-members>
     </pin-to-top-manager>
   </component>
