@@ -31,5 +31,6 @@ public class Property {
 
     private PropertyStatus propertyStatus;
 
+    private Long idHomeowner;
 
 }

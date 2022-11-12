@@ -18,6 +18,7 @@ public final class PropertyConverter {
                 .propertyType(property.getPropertyType())
                 .city(property.getCity())
                 .street(property.getStreet())
+                .postCode(property.getPostcode())
                 .streetNumber(property.getStreetNumber())
                 .livingSpace(property.getLivingSpace())
                 .numberOfRooms(property.getNumberOfRooms())

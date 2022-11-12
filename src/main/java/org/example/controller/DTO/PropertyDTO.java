@@ -15,12 +15,7 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 public class PropertyDTO {
 
-
-    @NotNull
-    private double price;
-
-    @NotNull
-    private PropertyType propertyType;
+    private Long id;
 
     @NotNull
     private String city;
@@ -28,11 +23,14 @@ public class PropertyDTO {
     @NotBlank
     private String street;
 
+    @NotNull
+    private int streetNumber;
+
     @NotBlank
     private String postCode;
 
     @NotNull
-    private int streetNumber;
+    private PropertyType propertyType;
 
     @NotNull
     private int livingSpace;
@@ -44,5 +42,10 @@ public class PropertyDTO {
     private int numberOfBedrooms;
 
     @NotNull
+    private double price;
+
+    @NotNull
     private PropertyStatus propertyStatus;
+
+    private Long idHomeowner;
 }

@@ -11,7 +11,7 @@ public class UserManagerImpl implements UserManager {
     @Override
     public User getUser() {
 
-        return new User(1, "rositsa@mail.com", "Rositsa", "Nikolova");
+        return new User();
 
     }
 }

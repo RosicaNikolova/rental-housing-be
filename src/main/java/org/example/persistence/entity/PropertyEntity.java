@@ -5,6 +5,7 @@ import org.example.domain.PropertyStatus;
 import org.example.domain.PropertyType;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -51,5 +52,10 @@ public class PropertyEntity {
     @Column(name = "propertystatus", columnDefinition = "ENUM('ACTIVE', 'INACTIVE')")
     @Enumerated(EnumType.STRING)
     private PropertyStatus propertyStatus;
+
+    @OneToMany(mappedBy = "propertyEntity")
+    private List<RequestEntity> requestEntityList;
+
+
 
 }
