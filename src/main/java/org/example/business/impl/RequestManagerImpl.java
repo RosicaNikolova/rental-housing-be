@@ -15,15 +15,14 @@ import java.util.List;
 @Service
 @AllArgsConstructor
 public class RequestManagerImpl implements RequestManager {
-    RequestRepository requestRepository;
+    private final RequestRepository requestRepository;
 
     @Override
     public Long createRequest(long homeownerId, long propertyId) {
-            return requestRepository.createRequest(SetParams(homeownerId, propertyId));
+            return requestRepository.createRequest(setParams(homeownerId, propertyId));
     }
 
-    @Override
-    public Request SetParams(long homeownerId, long propertyId) {
+    private Request setParams(long homeownerId, long propertyId) {
         Request request = new Request();
         request.setRequestStatus(RequestStatus.PENDING);
         request.setDate(LocalDateTime.now());

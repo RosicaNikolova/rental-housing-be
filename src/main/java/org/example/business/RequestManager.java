@@ -9,7 +9,5 @@ public interface RequestManager {
 
     Long createRequest(long homeownerId, long propertyId);
 
-    Request SetParams(long homeownerId, long propertyId);
-
     List<Request> getRequests(RequestStatus status);
 }

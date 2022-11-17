@@ -22,8 +22,8 @@ import java.util.Optional;
 @AllArgsConstructor
 public class PropertyRepositoryImpl implements PropertyRepository {
 
-    private JPAPropertyRepository jpaPropertyRepository;
-    ModelMapper modelMapper;
+    private final JPAPropertyRepository jpaPropertyRepository;
+    private final ModelMapper modelMapper;
 
 
     @Override

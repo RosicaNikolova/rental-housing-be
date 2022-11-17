@@ -22,7 +22,7 @@ public class UserEntity {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "role", columnDefinition = "ENUM('HOMEOWNER', 'ADMIN', 'RENETER')")
+    @Column(name = "role", columnDefinition = "ENUM('HOMEOWNER', 'ADMIN', 'RENTER')")
     @Enumerated(EnumType.STRING)
     private Role role;
 
