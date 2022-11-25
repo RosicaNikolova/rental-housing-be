@@ -8,4 +8,6 @@ import java.util.List;
 
 public interface JPAPropertyRepository extends JpaRepository<PropertyEntity, Long> {
     List<PropertyEntity> findFirstByPostcodeAndPrice(String postCode, double price);
+
+
 }

@@ -7,6 +7,7 @@ import org.example.domain.Role;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -40,4 +41,8 @@ public class UserEntity {
 
     @OneToMany(mappedBy = "userEntity")
     private List<RequestEntity> requestEntityList;
+
+    @OneToMany(mappedBy = "userEntity")
+    private Set<PropertyEntity> properties;
+
 }

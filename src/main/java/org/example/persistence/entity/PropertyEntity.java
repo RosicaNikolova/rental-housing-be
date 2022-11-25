@@ -56,6 +56,8 @@ public class PropertyEntity {
     @OneToMany(mappedBy = "propertyEntity")
     private List<RequestEntity> requestEntityList;
 
-
+    @ManyToOne()
+    @JoinColumn(name="ownerid")
+    private UserEntity userEntity;
 
 }

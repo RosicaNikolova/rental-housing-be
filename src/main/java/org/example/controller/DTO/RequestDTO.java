@@ -19,6 +19,7 @@ public class RequestDTO {
     private LocalDateTime date;
     private String homeownerFirstName;
     private String homeownerLastName;
+    private String reasonRejection;
     private PropertyDTO property;
 
 }

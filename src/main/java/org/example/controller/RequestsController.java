@@ -2,6 +2,7 @@ package org.example.controller;
 
 import lombok.AllArgsConstructor;
 import org.example.business.Exceptions.CreatePropertyException;
+import org.example.business.Exceptions.DeletePropertyException;
 import org.example.business.PropertyManager;
 import org.example.business.RequestManager;
 import org.example.controller.DTO.CreatePropertyResponse;
@@ -12,14 +13,16 @@ import org.example.controller.converters.RequestConverter;
 import org.example.domain.Property;
 import org.example.domain.Request;
 import org.example.domain.RequestStatus;
+import org.example.security.isauthenticated.IsAuthenticated;
 import org.modelmapper.ModelMapper;
+import org.springframework.context.annotation.Role;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.security.RolesAllowed;
 import javax.validation.Valid;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @CrossOrigin("http://localhost:3000")
@@ -32,6 +35,7 @@ public class RequestsController {
     ModelMapper modelMapper;
     RequestConverter requestConverter;
 
+    @IsAuthenticated
     @PostMapping()
     public ResponseEntity<CreatePropertyResponse> createRequest(@RequestBody @Valid PropertyDTO createdRequest) {
 
@@ -52,7 +56,9 @@ public class RequestsController {
         return ResponseEntity.status(HttpStatus.CREATED).body(createPropertyResponse);
     }
 
+    @IsAuthenticated
     @GetMapping
+    @RolesAllowed("ROLE_ADMIN")
     public ResponseEntity<GetRequestsResponse> getRequests(@RequestParam(value = "status") final RequestStatus status){
 
         List<Request> requests = requestManager.getRequests(status);
@@ -65,8 +71,24 @@ public class RequestsController {
 
             return ResponseEntity.ok(response);
         }
-
     }
+
+    @GetMapping("{homeownerId}")
+    public ResponseEntity<GetRequestsResponse> getRequestsForHomeowner(@PathVariable Long homeownerId){
+
+        List<Request> requestsForHomeowner = requestManager.getRequestsForHomeowner(homeownerId);
+        if (requestsForHomeowner.isEmpty()){
+            return ResponseEntity.noContent().build();
+        }
+        else{
+            List<RequestDTO> dtos = requestsForHomeowner.stream().map(request -> requestConverter.convertToDTO(request)).toList();
+            GetRequestsResponse response = new GetRequestsResponse(dtos);
+            return ResponseEntity.ok(response);
+        }
+    }
+
+
+
 
 
 

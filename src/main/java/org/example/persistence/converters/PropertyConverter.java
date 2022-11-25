@@ -24,6 +24,7 @@ public final class PropertyConverter {
                 .numberOfRooms(property.getNumberOfRooms())
                 .numberOfBedrooms(property.getNumberOfBedrooms())
                 .propertyStatus(property.getPropertyStatus())
+                .idHomeowner(property.getUserEntity().getId())
                 .build();
     }
 

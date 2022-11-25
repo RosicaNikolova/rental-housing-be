@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @Builder
 @NoArgsConstructor
@@ -13,7 +15,7 @@ import lombok.NoArgsConstructor;
 
 public class AccessToken {
     private String subject;
-    private Role role;
+    private List<String> roles;
     private Long userId;
 
 //    @JsonIgnore

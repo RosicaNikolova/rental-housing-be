@@ -13,6 +13,9 @@ import org.example.persistence.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class LoginManagerImpl implements LoginManager {
@@ -37,10 +40,12 @@ public class LoginManagerImpl implements LoginManager {
 
     private String generateAccessToken(User user) {
 
+        List<String> roles = new ArrayList<>();
+        roles.add(user.getRole().toString());
         return accessTokenEncoder.encode(
                 AccessToken.builder()
                         .subject(user.getEmail())
-                        .role(user.getRole())
+                        .roles(roles)
                         .userId(user.getId())
                         .build());
     }

@@ -13,12 +13,14 @@ import org.example.domain.AccessToken;
 import org.example.domain.Role;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
 import java.security.Key;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -33,8 +35,8 @@ public class AccessTokenEncoderDecoderImpl implements AccessTokenEncoder, Access
     @Override
     public String encode(AccessToken accessToken) {
         Map<String, Object> claimsMap = new HashMap<>();
-        if (accessToken.getRole() != null) {
-            claimsMap.put("role", accessToken.getRole());
+        if (!CollectionUtils.isEmpty(accessToken.getRoles())) {
+            claimsMap.put("roles", accessToken.getRoles());
         }
         if (accessToken.getUserId() != null) {
             claimsMap.put("userId", accessToken.getUserId());
@@ -56,11 +58,11 @@ public class AccessTokenEncoderDecoderImpl implements AccessTokenEncoder, Access
             Jwt jwt = Jwts.parserBuilder().setSigningKey(key).build().parse(accessTokenEncoded);
             Claims claims = (Claims) jwt.getBody();
 
-            Role role = claims.get("role", Role.class);
+            List<String> role = claims.get("roles", List.class);
 
             return AccessToken.builder()
                     .subject(claims.getSubject())
-                    .role(role)
+                    .roles(role)
                     .userId(claims.get("userId", Long.class))
                     .build();
         } catch (JwtException e) {

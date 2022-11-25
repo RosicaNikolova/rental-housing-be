@@ -5,13 +5,17 @@ import org.example.domain.User;
 import org.example.persistence.JPAUserRepository;
 import org.example.persistence.UserRepository;
 import org.example.persistence.entity.UserEntity;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
 
 @Repository
 @AllArgsConstructor
 public class UserRepositoryImpl implements UserRepository {
 
     private final JPAUserRepository jpaUserRepository;
+    private final ModelMapper modelMapper;
 
     @Override
     public User findUserByEmail(String email) {
@@ -39,5 +43,11 @@ public class UserRepositoryImpl implements UserRepository {
                 .build();
 
        return jpaUserRepository.save(userEntity).getId();
+    }
+
+    @Override
+    public Optional<User> findUserById(Long id) {
+        Optional<UserEntity> entity = jpaUserRepository.findById(id);
+        return Optional.of(modelMapper.map(entity, User.class));
     }
 }

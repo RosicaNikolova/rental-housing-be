@@ -10,4 +10,6 @@ public interface RequestRepository {
     Long createRequest(Request request);
 
     List<Request> getRequests(RequestStatus status);
+
+    List<Request> getRequestsForHomeowner(Long id);
 }

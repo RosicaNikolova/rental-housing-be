@@ -34,4 +34,13 @@ public class RequestRepositoryImpl implements RequestRepository {
                 .map(entity -> requestEntityConverter.convertToRequest(entity))
                 .toList();
     }
+
+    @Override
+    public List<Request> getRequestsForHomeowner(Long id) {
+        List<RequestEntity> entities = jpaRequestsRepository.findRequestEntitiesByUserEntity_Id(id);
+        return entities
+                .stream()
+                .map(entity -> requestEntityConverter.convertToRequest(entity))
+                .toList();
+    }
 }

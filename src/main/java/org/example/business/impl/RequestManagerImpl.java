@@ -37,4 +37,8 @@ public class RequestManagerImpl implements RequestManager {
     public List<Request> getRequests(RequestStatus status) {
         return requestRepository.getRequests(status);
     }
+
+    @Override
+    public List<Request> getRequestsForHomeowner(Long id) {return  requestRepository.getRequestsForHomeowner(id);
+    }
 }
