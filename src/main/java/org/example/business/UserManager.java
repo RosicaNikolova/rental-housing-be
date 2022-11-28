@@ -2,7 +2,9 @@ package org.example.business;
 
 import org.example.domain.User;
 
+import java.util.Optional;
+
 public interface UserManager {
 
-    public User getUser();
+    Optional<User> getUser(Long id);
 }

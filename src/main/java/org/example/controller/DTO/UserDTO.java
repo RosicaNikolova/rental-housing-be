@@ -1,21 +1,19 @@
-package org.example.domain;
-
+package org.example.controller.DTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.example.domain.Role;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class User {
-    private Long id;
-    private String email;
-    private String password;
+public class UserDTO {
+
     private String firstName;
     private String lastName;
-    private Role role;
+    private String email;
 
 }

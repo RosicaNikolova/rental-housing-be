@@ -1,10 +1,9 @@
 package org.example.controller.DTO;
 
+import lombok.Data;
 
-import lombok.Setter;
-import org.springframework.stereotype.Service;
 
-@Setter
+@Data
 public class CreatePropertyResponse {
     private Long id;
 

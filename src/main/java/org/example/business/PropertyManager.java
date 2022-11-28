@@ -2,7 +2,6 @@ package org.example.business;
 import java.util.List;
 import java.util.Optional;
 
-import org.example.business.Exceptions.CreatePropertyException;
 import org.example.domain.Property;
 
 
@@ -15,4 +14,7 @@ public interface PropertyManager {
     void updateProperty(Property property);
 
     void deleteProperty(long propertyId);
+
+   // void approve Inquiry();
+    //create instanse of this interface and call the method
 }

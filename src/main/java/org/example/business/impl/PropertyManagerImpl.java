@@ -12,7 +12,7 @@ import java.util.Optional;
 @Service
 @AllArgsConstructor
 public class PropertyManagerImpl implements PropertyManager {
-    private PropertyRepository propertyRepository;
+    private final PropertyRepository propertyRepository;
 
     @Override
     public Optional<Property> getProperty(long id) {

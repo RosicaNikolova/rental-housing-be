@@ -5,7 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bd49cf1-2cca-49db-a27d-0321b356dc6e" name="Changes" comment="changes to property class">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/business/Exceptions/UnauthorizedDataAccessException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/business/impl/IntegrationTests/RequestsControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/business/impl/IntegrationTests/UserControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/business/PropertyManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/business/PropertyManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/business/impl/UserManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/business/impl/UserManagerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/DTO/RegisterRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/DTO/RegisterRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/persistence/JPARequestsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/persistence/JPARequestsRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/persistence/impl/RequestRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/persistence/impl/RequestRepositoryImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,8 +53,8 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -52,6 +63,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2Ef3Yi9mvxetvuPsF2ZuhEjLczs" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -74,7 +88,7 @@
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;,
@@ -82,11 +96,23 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.example.controller.DTO" />
+      <recent name="org.example.domain" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.example.controller" />
       <recent name="org.example.business.impl" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.example.business.impl.IntegrationTests" />
+      <recent name="org.example.business.Exceptions" />
+      <recent name="org.example.security.auth" />
+      <recent name="org.example.security.isauthenticated" />
+      <recent name="org.example.security" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.HousingApp">
@@ -113,7 +139,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="PropertyManagerImplTest.DeletePropertySuccessful" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RequestsControllerTest.getRequests_shouldReturn200WithRequests_whenFound" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -126,7 +152,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.example.business.impl.PropertyManagerImplTest.DeletePropertySuccessful&quot;" />
+            <option value="&quot;org.example.business.impl.IntegrationTests.RequestsControllerTest.getRequests_shouldReturn200WithRequests_whenFound&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -136,7 +162,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="PropertyManagerImplTest.DeletePropertyThrowsAnException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="StudentsControllerTest.getUser_shouldReturn200WithUser_whenUserFound" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -149,7 +175,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.example.business.impl.PropertyManagerImplTest.DeletePropertyThrowsAnException&quot;" />
+            <option value="&quot;org.example.business.impl.IntegrationTests.StudentsControllerTest.getUser_shouldReturn200WithUser_whenUserFound&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -159,7 +185,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="PropertyManagerImplTest.UpdatePropertySuccessful" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="UserControllerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -172,7 +198,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.example.business.impl.PropertyManagerImplTest.UpdatePropertySuccessful&quot;" />
+            <option value="&quot;org.example.business.impl.IntegrationTests.UserControllerTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -182,7 +208,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="PropertyManagerImplTest.UpdatePropertyThrowsAnException" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="UserControllerTest.getStudent_shouldReturn404Error_whenStudentNotFound" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -195,7 +221,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.example.business.impl.PropertyManagerImplTest.UpdatePropertyThrowsAnException&quot;" />
+            <option value="&quot;org.example.business.impl.IntegrationTests.UserControllerTest.getStudent_shouldReturn404Error_whenStudentNotFound&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -214,11 +240,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.RequestsControllerTest.getRequests_shouldReturn200WithRequests_whenFound" />
+        <item itemvalue="Gradle.UserControllerTest" />
+        <item itemvalue="Gradle.UserControllerTest.getStudent_shouldReturn404Error_whenStudentNotFound" />
+        <item itemvalue="Gradle.StudentsControllerTest.getUser_shouldReturn200WithUser_whenUserFound" />
         <item itemvalue="Gradle.PropertyManagerImplTest" />
-        <item itemvalue="Gradle.PropertyManagerImplTest.DeletePropertySuccessful" />
-        <item itemvalue="Gradle.PropertyManagerImplTest.DeletePropertyThrowsAnException" />
-        <item itemvalue="Gradle.PropertyManagerImplTest.UpdatePropertyThrowsAnException" />
-        <item itemvalue="Gradle.PropertyManagerImplTest.UpdatePropertySuccessful" />
       </list>
     </recent_temporary>
   </component>
@@ -273,6 +299,22 @@
       <workItem from="1667056135388" duration="17709000" />
       <workItem from="1667552405027" duration="4524000" />
       <workItem from="1667565978527" duration="11056000" />
+      <workItem from="1667601787466" duration="793000" />
+      <workItem from="1667655064179" duration="21905000" />
+      <workItem from="1667838117064" duration="2947000" />
+      <workItem from="1667841269172" duration="11142000" />
+      <workItem from="1667981039440" duration="927000" />
+      <workItem from="1667988184265" duration="1197000" />
+      <workItem from="1667990101543" duration="2583000" />
+      <workItem from="1668252111236" duration="3611000" />
+      <workItem from="1668686409656" duration="14809000" />
+      <workItem from="1668767393010" duration="1641000" />
+      <workItem from="1669198059382" duration="5341000" />
+      <workItem from="1669290713982" duration="8228000" />
+      <workItem from="1669370819614" duration="2077000" />
+      <workItem from="1669373553497" duration="1530000" />
+      <workItem from="1669543556618" duration="12325000" />
+      <workItem from="1669628135534" duration="6539000" />
     </task>
     <task id="LOCAL-00001" summary="test runner">
       <created>1662990121466</created>

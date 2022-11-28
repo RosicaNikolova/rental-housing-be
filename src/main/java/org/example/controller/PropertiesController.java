@@ -29,7 +29,7 @@ public class PropertiesController {
     private ModelMapper modelMapper;
 
     @GetMapping("{id}")
-    public ResponseEntity<PropertyDTO> getProperty(@PathVariable(value = "id") final long id){
+    public ResponseEntity<PropertyDTO> getProperty(@PathVariable(value = "id") final Long id){
 
         final Optional<Property> propertyOptional = propertyManager.getProperty(id);
 
@@ -74,7 +74,7 @@ public class PropertiesController {
     }
 
     @PutMapping("{id}")
-    public ResponseEntity<Void> updateProperty(@PathVariable("id") long id,
+    public ResponseEntity<Void> updateProperty(@PathVariable("id") final Long id,
                                               @RequestBody @Valid UpdatePropertyRequest request) {
         request.setId(id);
 
@@ -88,7 +88,7 @@ public class PropertiesController {
         return ResponseEntity.noContent().build();
     }
     @DeleteMapping("{propertyId}")
-    public ResponseEntity<Void> deleteProperty(@PathVariable long propertyId) {
+    public ResponseEntity<Void> deleteProperty(@PathVariable final Long propertyId) {
         try {
             propertyManager.deleteProperty(propertyId);
         }
