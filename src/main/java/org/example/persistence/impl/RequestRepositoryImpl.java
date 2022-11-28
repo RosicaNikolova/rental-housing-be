@@ -28,7 +28,7 @@ public class RequestRepositoryImpl implements RequestRepository {
     @Override
     public List<Request> getRequests(RequestStatus status) {
 
-        List<RequestEntity> entities = jpaRequestsRepository.getRequests();
+        List<RequestEntity> entities = jpaRequestsRepository.findRequestEntitiesByRequestStatus(status);
         return  entities
                 .stream()
                 .map(entity -> requestEntityConverter.convertToRequest(entity))

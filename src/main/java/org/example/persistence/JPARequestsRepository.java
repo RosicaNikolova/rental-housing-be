@@ -1,5 +1,6 @@
 package org.example.persistence;
 
+import org.example.domain.RequestStatus;
 import org.example.persistence.entity.RequestEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -12,4 +13,6 @@ public interface JPARequestsRepository extends JpaRepository<RequestEntity, Long
     List<RequestEntity> getRequests();
 
     List<RequestEntity> findRequestEntitiesByUserEntity_Id(Long id);
+
+    List<RequestEntity> findRequestEntitiesByRequestStatus(RequestStatus status);
 }

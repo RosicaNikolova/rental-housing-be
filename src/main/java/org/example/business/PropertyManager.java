@@ -14,4 +14,7 @@ public interface PropertyManager {
     void updateProperty(Property property);
 
     void deleteProperty(long propertyId);
+
+   // void approve Inquiry();
+    //create instanse of this interface and call the method
 }

@@ -5,10 +5,12 @@ import org.example.business.UserManager;
 import org.example.controller.DTO.UserDTO;
 import org.example.domain.Property;
 import org.example.domain.User;
+import org.example.security.isauthenticated.IsAuthenticated;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.security.RolesAllowed;
 import java.util.Optional;
 
 @RestController
@@ -21,6 +23,7 @@ public class UserController {
     private final ModelMapper modelMapper;
 
     @GetMapping("{userId}")
+    @IsAuthenticated
     public ResponseEntity<UserDTO> getUser(@PathVariable final Long userId){
 
         final Optional<User> userOptional = userManager.getUser(userId);
