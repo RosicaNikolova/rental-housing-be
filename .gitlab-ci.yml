@@ -17,3 +17,4 @@ sonarqube:
     stage: sonarqube
     script:
         - ./gradlew sonarqube
+        - ./gradlew.bat --stop
