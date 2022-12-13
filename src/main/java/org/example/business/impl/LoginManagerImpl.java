@@ -34,7 +34,11 @@ public class LoginManagerImpl implements LoginManager {
 
         }
         String accessToken = generateAccessToken(user);
-        return LoginResponse.builder().accessToken(accessToken).build();
+        List<String> roles = new ArrayList<>();
+        roles.add(user.getRole().toString());
+        return LoginResponse.builder().accessToken(accessToken)
+                .roles(roles)
+                .build();
         //return null;
     }
 

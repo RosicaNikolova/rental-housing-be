@@ -10,7 +10,6 @@ import org.example.business.AccessTokenDecoder;
 import org.example.business.AccessTokenEncoder;
 import org.example.business.Exceptions.InvalidAccessTokenException;
 import org.example.domain.AccessToken;
-import org.example.domain.Role;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
