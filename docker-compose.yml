@@ -11,7 +11,7 @@ services:
     s3app:
         build:
             dockerfile: Dockerfile
-        image: backend:latest
+        image: springio/gs-spring-boot-docker:latest
         restart: always
         ports:
             -8080:8080
