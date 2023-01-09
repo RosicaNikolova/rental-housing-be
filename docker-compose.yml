@@ -3,7 +3,7 @@ services:
     mysqldb:
         image: mysql
         ports:
-                -3030:3306
+            -3030:3306
         environment:
             MYSQL_DATABASE: housing_app
             MYSQL_ROOT_PASSWORD: 9Rosica9
