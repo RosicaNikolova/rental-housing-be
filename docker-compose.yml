@@ -1,0 +1,35 @@
+version: '2'
+services:
+    mysqldb:
+        image: mysql
+        ports:
+            -3030:3306
+        environment:
+            MYSQL_DATABASE: housing_app
+            MYSQL_ROOT_PASSWORD: 9Rosica9
+            
+    s3app:
+        build:
+            dockerfile: Dockerfile
+        image: springio/gs-spring-boot-docker:latest
+        restart: always
+        ports:
+            -8080:8080
+        environment:
+            MYSQL_HOST: mysqldb
+            MYSQL_USER: root
+            MYSQL_PASSWORD: 9Rosica9
+            MYSQL_PORT: 3306
+        depends_on:
+            -mysqldb
+
+    app-client:
+        build:
+            dockerfile: Dockerfile
+            args:
+                    REACT_APP_API_BASE_URL: http://127.0.0.1:8080
+        ports:
+            -"3030:3030"
+        restart: always
+        depends_on:
+            -s3app

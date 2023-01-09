@@ -5,16 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bd49cf1-2cca-49db-a27d-0321b356dc6e" name="Changes" comment="changes to property class">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/configuration/WebSocketConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/ChatController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/MessageStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/business/impl/AccessTokenEncoderDecoderImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/business/impl/AccessTokenEncoderDecoderImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/business/impl/LoginManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/business/impl/LoginManagerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/DTO/LoginResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/DTO/LoginResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/DTO/RegisterResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/DTO/RegisterResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -322,7 +314,15 @@
       <workItem from="1670841499245" duration="19000" />
       <workItem from="1670841768326" duration="2362000" />
       <workItem from="1670844286366" duration="8195000" />
-      <workItem from="1670933957872" duration="3923000" />
+      <workItem from="1670933957872" duration="5253000" />
+      <workItem from="1671101114186" duration="5876000" />
+      <workItem from="1671186972928" duration="1238000" />
+      <workItem from="1671296661157" duration="38000" />
+      <workItem from="1673106124876" duration="2000000" />
+      <workItem from="1673113131271" duration="796000" />
+      <workItem from="1673195262070" duration="622000" />
+      <workItem from="1673197547739" duration="824000" />
+      <workItem from="1673283047959" duration="6546000" />
     </task>
     <task id="LOCAL-00001" summary="test runner">
       <created>1662990121466</created>
