@@ -15,7 +15,7 @@ public interface PropertyRepository {
 
     Long createProperty(Property request);
 
-    boolean findByPostCodeAndPrice(String postCode, double price);
+    //boolean findByPostCodeAndPrice(String postCode, double price);
 
     void updateProperty(Property property);
 

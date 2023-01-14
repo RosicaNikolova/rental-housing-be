@@ -21,7 +21,6 @@ public class UserManagerImpl implements UserManager {
         if(requestAccessToken.getUserId() != id){
             throw new UnauthorizedDataAccessException("USER_ID_NOT_FROM_LOGGED_IN_USER");
         }
-
         return userRepository.findUserById(id);
 
     }

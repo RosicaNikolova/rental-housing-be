@@ -6,6 +6,7 @@ import org.example.domain.User;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -24,7 +25,7 @@ import static org.springframework.util.MimeTypeUtils.APPLICATION_JSON_VALUE;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
-@AutoConfigureMockMvc
+@AutoConfigureMockMvc()
 class UserControllerTest {
     @Autowired
     private MockMvc mockMvc;
@@ -59,7 +60,7 @@ class UserControllerTest {
     //Testing what returns if the user is not present at all
     @Test
     @WithMockUser(username = "rositsa@gmail.com", roles = {"HOMEOWNER"})
-    void getStudent_shouldReturn404Error_whenStudentNotFound() throws Exception {
+    void getUser_shouldReturn404Error_whenStudentNotFound() throws Exception {
         when(userManager.getUser(10L)).thenReturn(Optional.empty());
 
         mockMvc.perform(get("/users/10"))

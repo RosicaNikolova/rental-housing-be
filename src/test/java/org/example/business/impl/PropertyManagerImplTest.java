@@ -3,6 +3,7 @@ package org.example.business.impl;
 import org.example.business.Exceptions.CreatePropertyException;
 import org.example.business.Exceptions.DeletePropertyException;
 import org.example.business.Exceptions.UpdatePropertyException;
+import org.example.domain.AccessToken;
 import org.example.domain.Property;
 import org.example.domain.PropertyType;
 import org.example.persistence.PropertyRepository;
@@ -37,7 +38,9 @@ class PropertyManagerImplTest {
         when(propertyRepositoryMock.findAll())
                 .thenReturn(expectedResult);
 
-        PropertyManagerImpl propertyManager = new PropertyManagerImpl(propertyRepositoryMock);
+        AccessToken accessToken = new AccessToken();
+
+        PropertyManagerImpl propertyManager = new PropertyManagerImpl(propertyRepositoryMock, new AccessToken());
         List<Property> actualResult = propertyManager.getProperties();
         assertEquals(expectedResult, actualResult);
         verify(propertyRepositoryMock).findAll();
@@ -52,8 +55,9 @@ class PropertyManagerImplTest {
 
         when(propertyRepositoryMock.findAll())
                 .thenReturn(expectedResult);
+        AccessToken accessToken = new AccessToken();
 
-        PropertyManagerImpl propertyManager = new PropertyManagerImpl(propertyRepositoryMock);
+        PropertyManagerImpl propertyManager = new PropertyManagerImpl(propertyRepositoryMock, accessToken);
         List<Property> actualResult = propertyManager.getProperties();
         assertEquals(expectedResult, actualResult);
         verify(propertyRepositoryMock).findAll();
@@ -76,7 +80,9 @@ class PropertyManagerImplTest {
         when(propertyRepositoryMock.findById(1L))
                 .thenReturn(expectedResult);
 
-        PropertyManagerImpl propertyManager = new PropertyManagerImpl(propertyRepositoryMock);
+        AccessToken accessToken = new AccessToken();
+
+        PropertyManagerImpl propertyManager = new PropertyManagerImpl(propertyRepositoryMock, accessToken);
         Optional<Property> actualResult= propertyManager.getProperty(1L);
         assertEquals(expectedResult, actualResult);
         verify(propertyRepositoryMock).findById(1L);
@@ -98,7 +104,9 @@ class PropertyManagerImplTest {
         when(propertyRepositoryMock.findById(1L))
                 .thenReturn(propertyOptional);
 
-        PropertyManagerImpl propertyManager = new PropertyManagerImpl(propertyRepositoryMock);
+        AccessToken accessToken = new AccessToken();
+
+        PropertyManagerImpl propertyManager = new PropertyManagerImpl(propertyRepositoryMock, new AccessToken());
         Optional<Property> actualResult= propertyManager.getProperty(2L);
         assertEquals(Optional.empty(), actualResult);
         verify(propertyRepositoryMock).findById(2L);
@@ -119,7 +127,9 @@ class PropertyManagerImplTest {
         when(propertyRepositoryMock.createProperty(property))
                .thenReturn(1L);
 
-        PropertyManagerImpl propertyManager = new PropertyManagerImpl(propertyRepositoryMock);
+        AccessToken accessToken = new AccessToken();
+
+        PropertyManagerImpl propertyManager = new PropertyManagerImpl(propertyRepositoryMock, accessToken);
 
         Long actualId = propertyManager.createProperty(property);
         assertEquals(1L, actualId);
@@ -140,7 +150,9 @@ class PropertyManagerImplTest {
         when(propertyRepositoryMock.createProperty(property))
                 .thenThrow(new CreatePropertyException("exception"));
 
-        PropertyManagerImpl propertyManager = new PropertyManagerImpl(propertyRepositoryMock);
+        AccessToken accessToken = new AccessToken();
+
+        PropertyManagerImpl propertyManager = new PropertyManagerImpl(propertyRepositoryMock, accessToken);
 
         assertThrows(CreatePropertyException.class, () -> propertyManager.createProperty(property));
         verify(propertyRepositoryMock).createProperty(property);
@@ -158,7 +170,9 @@ class PropertyManagerImplTest {
                 .price(100)
                 .build();
 
-        PropertyManagerImpl propertyManager = new PropertyManagerImpl(propertyRepositoryMock);
+        AccessToken accessToken = new AccessToken();
+
+        PropertyManagerImpl propertyManager = new PropertyManagerImpl(propertyRepositoryMock, accessToken);
 
         propertyManager.updateProperty(property);
         verify(propertyRepositoryMock).updateProperty(property);
@@ -181,7 +195,9 @@ class PropertyManagerImplTest {
 //        when(propertyRepositoryMock.updateProperty(property))
 //                .thenThrow(new CreatePropertyException("exception"));
 
-        PropertyManagerImpl propertyManager = new PropertyManagerImpl(propertyRepositoryMock);
+        AccessToken accessToken = new AccessToken();
+
+        PropertyManagerImpl propertyManager = new PropertyManagerImpl(propertyRepositoryMock, accessToken);
 
         assertThrows(UpdatePropertyException.class, () -> propertyManager.updateProperty(property));
         verify(propertyRepositoryMock).updateProperty(property);
@@ -193,7 +209,9 @@ class PropertyManagerImplTest {
     void DeletePropertySuccessful(){
         PropertyRepository propertyRepositoryMock = mock(PropertyRepository.class);
 
-        PropertyManagerImpl propertyManager = new PropertyManagerImpl(propertyRepositoryMock);
+        AccessToken accessToken = new AccessToken();
+
+        PropertyManagerImpl propertyManager = new PropertyManagerImpl(propertyRepositoryMock, accessToken);
 
         propertyManager.deleteProperty(1L);
         verify(propertyRepositoryMock).deleteProperty(1L);
@@ -211,7 +229,9 @@ class PropertyManagerImplTest {
 //        when(propertyRepositoryMock.updateProperty(property))
 //                .thenThrow(new CreatePropertyException("exception"));
 
-        PropertyManagerImpl propertyManager = new PropertyManagerImpl(propertyRepositoryMock);
+        AccessToken accessToken = new AccessToken();
+
+        PropertyManagerImpl propertyManager = new PropertyManagerImpl(propertyRepositoryMock, accessToken);
 
         assertThrows(DeletePropertyException.class, () -> propertyManager.deleteProperty(1L));
         verify(propertyRepositoryMock).deleteProperty(1L);

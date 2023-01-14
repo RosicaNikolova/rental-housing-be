@@ -11,5 +11,5 @@ public interface RequestManager {
 
     List<Request> getRequests(RequestStatus status);
 
-    List<Request> getRequestsForHomeowner(Long id);
+    List<Request> getRequestsForHomeowner();
 }

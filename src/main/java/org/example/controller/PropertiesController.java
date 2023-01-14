@@ -13,11 +13,13 @@ import org.example.controller.DTO.UpdatePropertyRequest;
 import org.example.domain.Property;
 import org.example.controller.DTO.CreatePropertyResponse;
 import org.example.controller.DTO.GetAllPropertiesResponse;
+import org.example.security.isauthenticated.IsAuthenticated;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.security.RolesAllowed;
 import javax.validation.Valid;
 
 @RestController
@@ -58,6 +60,8 @@ public class PropertiesController {
         }
     }
 
+    @IsAuthenticated
+    @RolesAllowed("ROLE_HOMEOWNER")
     @PostMapping()
     public ResponseEntity<CreatePropertyResponse> createProperty(@RequestBody @Valid PropertyDTO request) {
 
@@ -73,6 +77,7 @@ public class PropertiesController {
         return ResponseEntity.status(HttpStatus.CREATED).body(createPropertyResponse);
     }
 
+    //not implemented in fe
     @PutMapping("{id}")
     public ResponseEntity<Void> updateProperty(@PathVariable("id") final Long id,
                                               @RequestBody @Valid UpdatePropertyRequest request) {
@@ -87,6 +92,8 @@ public class PropertiesController {
         }
         return ResponseEntity.noContent().build();
     }
+
+    //Not implemented in fe
     @DeleteMapping("{propertyId}")
     public ResponseEntity<Void> deleteProperty(@PathVariable final Long propertyId) {
         try {
