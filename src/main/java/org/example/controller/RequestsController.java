@@ -36,6 +36,7 @@ public class RequestsController {
     RequestConverter requestConverter;
 
     @IsAuthenticated
+    @RolesAllowed("ROLE_HOMEOWNER")
     @PostMapping()
     public ResponseEntity<CreatePropertyResponse> createRequest(@RequestBody @Valid PropertyDTO createdRequest) {
 
@@ -57,8 +58,8 @@ public class RequestsController {
     }
 
     @IsAuthenticated
-    @GetMapping
     @RolesAllowed("ROLE_ADMIN")
+    @GetMapping
     public ResponseEntity<GetRequestsResponse> getRequests(@RequestParam(value = "status") final RequestStatus status){
 
         List<Request> requests = requestManager.getRequests(status);
@@ -73,10 +74,12 @@ public class RequestsController {
         }
     }
 
-    @GetMapping("{homeownerId}")
-    public ResponseEntity<GetRequestsResponse> getRequestsForHomeowner(@PathVariable Long homeownerId){
+    @IsAuthenticated
+    @RolesAllowed("ROLE_HOMEOWNER")
+    @GetMapping("/homeowner")
+    public ResponseEntity<GetRequestsResponse> getRequestsForHomeowner(){
 
-        List<Request> requestsForHomeowner = requestManager.getRequestsForHomeowner(homeownerId);
+        List<Request> requestsForHomeowner = requestManager.getRequestsForHomeowner();
         if (requestsForHomeowner.isEmpty()){
             return ResponseEntity.noContent().build();
         }
@@ -86,9 +89,6 @@ public class RequestsController {
             return ResponseEntity.ok(response);
         }
     }
-
-
-
 
 
 

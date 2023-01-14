@@ -2,6 +2,7 @@ package org.example.business.impl;
 
 import lombok.AllArgsConstructor;
 import org.example.business.PropertyManager;
+import org.example.domain.AccessToken;
 import org.example.domain.Property;
 import org.example.persistence.PropertyRepository;
 import org.springframework.stereotype.Service;
@@ -13,6 +14,8 @@ import java.util.Optional;
 @AllArgsConstructor
 public class PropertyManagerImpl implements PropertyManager {
     private final PropertyRepository propertyRepository;
+    private AccessToken AccessToken;
+
 
     @Override
     public Optional<Property> getProperty(long id) {
@@ -27,35 +30,18 @@ public class PropertyManagerImpl implements PropertyManager {
 
     @Override
     public Long createProperty(Property request){
-
-        //the Controller catch the exception
-
-       // if(propertyRepository.findByPostCodeAndPrice(request.getPostCode(), request.getPrice())){
+            request.setIdHomeowner(AccessToken.getUserId());
             return propertyRepository.createProperty(request);
-        //}
-        //else{
-            //throw new CreatePropertyException("This property already exists");
-        //}
-        //return 1L;
     }
 
     @Override
     public void updateProperty(Property property) {
-        //if(propertyRepository.findById(property.getId()).isEmpty()){
-          //  throw new UpdatePropertyException("Property not found");
-        //}
-        //else {
             propertyRepository.updateProperty(property);
-        //}
     }
 
     @Override
     public void deleteProperty(long propertyId) {
-        //if(propertyRepository.findById(propertyId).isEmpty()){
-          //  throw new DeletePropertyException("Property not found");
-        //}
-        //else {
+
             propertyRepository.deleteProperty(propertyId);
-        //}
     }
 }

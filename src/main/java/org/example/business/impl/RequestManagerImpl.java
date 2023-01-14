@@ -2,10 +2,7 @@ package org.example.business.impl;
 
 import lombok.AllArgsConstructor;
 import org.example.business.RequestManager;
-import org.example.domain.Property;
-import org.example.domain.Request;
-import org.example.domain.RequestStatus;
-import org.example.domain.User;
+import org.example.domain.*;
 import org.example.persistence.RequestRepository;
 import org.springframework.stereotype.Service;
 
@@ -15,8 +12,8 @@ import java.util.List;
 @Service
 @AllArgsConstructor
 public class RequestManagerImpl implements RequestManager {
+    private AccessToken requestAccessToken;
     private final RequestRepository requestRepository;
-
     @Override
     public Long createRequest(long homeownerId, long propertyId) {
             return requestRepository.createRequest(setParams(homeownerId, propertyId));
@@ -39,6 +36,8 @@ public class RequestManagerImpl implements RequestManager {
     }
 
     @Override
-    public List<Request> getRequestsForHomeowner(Long id) {return  requestRepository.getRequestsForHomeowner(id);
+    public List<Request> getRequestsForHomeowner() {
+        Long homeownerId = requestAccessToken.getUserId();
+        return  requestRepository.getRequestsForHomeowner(homeownerId);
     }
 }
